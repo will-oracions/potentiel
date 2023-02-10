@@ -5,7 +5,7 @@ const config = require('../config/app.config');
 const clientID = config.GITHUB_CLIENT_ID;
 const clientSecret = config.GITHUB_SECRET;
 
-console.log(clientID, clientSecret);
+// console.log(clientID, clientSecret);
 
 const GITHUB_URL = "https://github.com/login/oauth/access_token";
 

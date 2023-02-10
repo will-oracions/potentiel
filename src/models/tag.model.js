@@ -1,29 +1,20 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
-    username: {
+const TagSchema = new mongoose.Schema({
+    name: {
         type: String,
         required: true,
         minlength: 3,
-    },
-    email: {
-        type: String,
-        required: true,
-    },
-    passwordHash: {
-        type: String,
-        required: true,
     },
     ressources: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Ressource',
-        }
+        },
     ],
-    
 });
 
-UserSchema.set('toJSON', {
+TagSchema.set('toJSON', {
     transform: (document, returnedObject) => {
         returnedObject.id = document.id;
         delete returnedObject._id;
@@ -32,4 +23,4 @@ UserSchema.set('toJSON', {
     }
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Tag', TagSchema);
