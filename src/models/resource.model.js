@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 //     TORRENT_FILE: '5',
 // };
 
-const RessourceSchema = new mongoose.Schema({
+const ResourceSchema = new mongoose.Schema({
     type: {
         type: String,
         required: true,
@@ -51,10 +51,11 @@ const RessourceSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Tag',
         },
-    ]
+    ],
+    // level: String,
 });
 
-RessourceSchema.set('toJSON', {
+ResourceSchema.set('toJSON', {
     transform: (document, returnedObject) => {
         returnedObject.id = document.id;
         delete returnedObject._id;
@@ -63,4 +64,4 @@ RessourceSchema.set('toJSON', {
     }
 });
 
-module.exports = mongoose.model('Ressource', RessourceSchema);
+module.exports = mongoose.model('Resource', ResourceSchema);

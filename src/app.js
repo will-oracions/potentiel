@@ -5,7 +5,7 @@ const middleware = require('./utils/middleware');
 const { connectToMongo } = require('./helpers/db.helper');
 const githubAuthRouter = require('./controllers/github-auth.controller');
 const tagRouter = require('./controllers/tags.controller');
-const ressourceRouter = require('./controllers/ressources.controller');
+const resourceRouter = require('./controllers/resources.controller');
 const userRouter = require('./controllers/users.controller');
 
 connectToMongo();
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 app.use('/auth', githubAuthRouter);
 app.use('/api/tags', tagRouter);
-app.use('/api/ressources', ressourceRouter);
+app.use('/api/resources', resourceRouter);
 app.use('/api/users', userRouter);
 
 app.use(middleware.unknowEndpoint);
