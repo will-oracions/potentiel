@@ -8,4 +8,12 @@ const MONGODB_URI = process.env.NODE_ENV === 'test'
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_SECRET = process.env.GITHUB_SECRET;
 
-module.exports = { PORT, MONGODB_URI, GITHUB_CLIENT_ID, GITHUB_SECRET };
+const TAKE = 12;
+
+module.exports = { 
+    PORT, 
+    MONGODB_URI,
+    GITHUB_CLIENT_ID,
+    GITHUB_SECRET,
+    TAKE,
+};
