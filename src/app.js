@@ -11,6 +11,7 @@ const tagRouter = require('./controllers/tags.controller');
 const resourceRouter = require('./controllers/resources.controller');
 const userRouter = require('./controllers/users.controller');
 const googleAuthRouter = require('./controllers/google-auth.controller');
+const linkedinAuthRouter = require('./controllers/linkedin-auth.controller');
 
 connectToMongo();
 
@@ -31,6 +32,8 @@ app.get('/', (req, res) => {
 
 app.use('/auth/github', githubAuthRouter);
 app.use('/auth/google', googleAuthRouter);
+app.use('/auth/linkedin', linkedinAuthRouter);
+
 app.use('/api/tags', tagRouter);
 app.use('/api/resources', resourceRouter);
 app.use('/api/users', userRouter);
