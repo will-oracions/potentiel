@@ -9,7 +9,7 @@ const clientSecret = config.GITHUB_SECRET;
 
 const GITHUB_URL = "https://github.com/login/oauth/access_token";
 
-Router.get('/github/callback', (req, res) => {
+Router.get('/callback', (req, res) => {
     // console.log(res.query);
   const requestToken = req.query.code
   // res.json({query: req.query });
@@ -24,7 +24,7 @@ Router.get('/github/callback', (req, res) => {
     access_token = response.data.access_token
     // res.json({ response: response.data });
     // console.log('Access Token: ', access_token);
-    res.redirect('/auth/success');
+    res.redirect('/auth/github/success');
   })
   .catch((error) => {
     console.log('error: ', error);
