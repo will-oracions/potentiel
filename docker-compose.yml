@@ -18,7 +18,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    dependsOn:
+    depends_on:
       - database
     container_name: potentiel_api
     environment:
