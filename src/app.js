@@ -16,7 +16,7 @@ app.use(middleware.requestLogger);
 // app.use(middleware.userExtractor);
 
 app.get('/', (req, res) => {
-  res.send('<h1>Welcome. The Blog post app is running !!!</h1>');
+  res.send('<h1>Welcome to potentiel API</h1>');
 });
 
 app.use('/auth', githubAuthRouter);
