@@ -8,7 +8,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=
     restart: unless-stopped
     ports:
-      - "27017:27017"
+      - "47017:27017"
     volumes:
       - ./database/db:/data/db
       - ./database/dev.archive:/Databases/dev.archive
@@ -25,8 +25,8 @@ services:
       - database
     container_name: potentiel_api
     environment:
-      MONGODB_URI: mongodb://database:27017/potentiel
-      TEST_MONGODB_URI: mongodb://database:27017/test_potentiel
+      MONGODB_URI: mongodb://database:47017/potentiel
+      TEST_MONGODB_URI: mongodb://database:47017/test_potentiel
       PORT: 5000
       JWT_SECRET: secret
       GITHUB_CLIENT_ID: 79f614f47a73f58eaf91
