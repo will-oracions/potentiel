@@ -13,6 +13,9 @@ services:
       - ./database/db:/data/db
       - ./database/dev.archive:/Databases/dev.archive
       - ./database/production:/Databases/production
+    networks:
+      potentielnetwork:
+
   api:
     image: potentiel_api
     build:
@@ -28,9 +31,13 @@ services:
       JWT_SECRET: secret
       GITHUB_CLIENT_ID: 79f614f47a73f58eaf91
       GITHUB_SECRET: 56153d607a080f98ae58b2b3a47be195da8da0dd
-
     links:
       - database
     restart: unless-stopped
     ports:
       - "5000:5000"
+    networks:
+      potentielnetwork:
+
+networks:
+  potentielnetwork:
