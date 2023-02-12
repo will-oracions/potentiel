@@ -22,8 +22,8 @@ services:
       - database
     container_name: potentiel_api
     environment:
-      MONGODB_URI: mongodb://root:root@database:27017/potentiel
-      TEST_MONGODB_URI: mongodb://root:root@database:27017/test_potentiel
+      MONGODB_URI: mongodb://root:root@potentiel_database:27017/potentiel
+      TEST_MONGODB_URI: mongodb://root:root@potentiel_database:27017/test_potentiel
       PORT: 5000
       JWT_SECRET: secret
       GITHUB_CLIENT_ID: 79f614f47a73f58eaf91
